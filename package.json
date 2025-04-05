@@ -1,0 +1,22 @@
+{
+  "name": "pipe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "baseai": "baseai"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@baseai/core": "^0.9.43",
+    "dotenv": "^16.4.7",
+    "inquirer": "^12.5.2",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "baseai": "^0.9.43"
+  }
+}
