@@ -1,7 +1,13 @@
 import { PipeI } from '@baseai/core';
+import getCurrentWeatherTool from '../tools/get-current-weather';
 // import EamilgeneratorMemory from "../memory/summarizer-agent-memory";
 
-const pipeSummarizer = (): PipeI => ({
+const pipeSummarizer = (): PipeI => {
+	const weatherTool = getCurrentWeatherTool();
+	console.log('getCurrentWeatherTool():', weatherTool); 
+	
+	
+	return {
 	// Replace with your API key https://langbase.com/docs/api-reference/api-keys
 	apiKey: process.env.LANGBASE_API_KEY!,
 	name: 'summarizer',
@@ -20,10 +26,17 @@ const pipeSummarizer = (): PipeI => ({
 	stop: [],
 	tool_choice: 'auto',
 	parallel_tool_calls: true,
-	messages: [{ role: 'system', content: `You are a helpful AI assistant.` }],
+	messages: [
+		{ role: 'system', 
+			content: `You are a content summarizer. You will summarize content without losing context into a shorter version.
+			If the content includes a location, outdoor activity, or time-sensitive information, ALWAYS use the 'getCurrentWeather' tool to enhance the summary with current weather data.` 
+},
+	],
 	variables: [],
 	memory: [],
-	tools: []
-});
+	tools: [getCurrentWeatherTool()]
+  };
+}
+
 
 export default pipeSummarizer;

@@ -14,6 +14,8 @@
     "@baseai/core": "^0.9.43",
     "dotenv": "^16.4.7",
     "inquirer": "^12.5.2",
+    "langchain": "^0.3.20",
+    "openai": "^4.92.1",
     "ora": "^8.2.0"
   },
   "devDependencies": {

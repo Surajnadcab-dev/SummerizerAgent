@@ -3,3 +3,5 @@ node_modules
 **/.baseai/
 # env file
 .env
+# baseai
+**/.baseai/
